@@ -10,7 +10,7 @@
 import { EditIcon } from '@chakra-ui/icons';
   
   
-  export function PositionsList(){
+export const PositionsList = () => {
   
   
   

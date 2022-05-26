@@ -30,15 +30,20 @@ interface PositionProps {
   map:() => void;
 }
 
+
+
 type AuthContextProviderProps ={
   children: ReactNode;
 }
 
 type AuthContextType = {
+ 
   contributors: ContriProps | any;
   positions: PositionProps | any;
+  
   getContributors: () => Promise<void>;
   getPositions: () => Promise<void>;
+ 
 }
 export function AuthContextProvider(props: AuthContextProviderProps){
   
@@ -48,6 +53,7 @@ export function AuthContextProvider(props: AuthContextProviderProps){
 
   const [contributors, setContributors] =  useState<ContriProps[]>([]);
   const [positions, setPositions] =  useState<PositionProps[]>([]);
+  
 
  async function getContributors(){
     await api.get("/agents")
@@ -71,12 +77,14 @@ export function AuthContextProvider(props: AuthContextProviderProps){
    console.error("ops! ocorreu um erro : " + err);
  });
  }
+
+
  
 
 
 
   return(
-    <AuthContext.Provider value={{contributors, getContributors,positions,getPositions}}>
+    <AuthContext.Provider value={{contributors, getContributors, positions,getPositions}}>
       {props.children}
       </AuthContext.Provider>
   );

@@ -1,9 +1,10 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
 import { css } from "@emotion/react";
 import { Header } from "./components/Header";
 import { ArrowLeft } from 'phosphor-react';
 import { Button, ButtonGroup  } from '@chakra-ui/react';
 import Link from 'next/link';
+import { DetailsContributor } from './components/DetailsContributor';
 
 export default function ContributorsDetails(){
 
@@ -88,6 +89,22 @@ export default function ContributorsDetails(){
       margin-left:-215px;
 
  `
+ const PerfilBox =  styled.div`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px;
+        gap: 24px;
+        
+        width: 317px;
+        height: 82.75px;
+        
+
+        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+ `
 
   return(
     <Area >
@@ -97,7 +114,9 @@ export default function ContributorsDetails(){
           <Buttonn > <Link href='/'><ArrowLeft size={24} color="#050505" weight="bold" /></Link></Buttonn><SpanTitle>  Detalhes do colaborador</SpanTitle>
           </Box>
           <DetailsArea>
-            
+
+              <DetailsContributor/>
+
           </DetailsArea>
 
     </Area>
