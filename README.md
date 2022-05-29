@@ -18,7 +18,7 @@ Desafio pedido pago.
   
   
   </h1>
- **Projeto em Desenvolvimento**
+
  Acesse : https://desafio-pedidopago-k94luqadn-rafaelfigueiredo2203.vercel.app/
 
 
