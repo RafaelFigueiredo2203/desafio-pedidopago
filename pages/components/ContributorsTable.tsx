@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable @next/next/no-img-element */
+import {ChangeEvent, useRef } from  'react';
 import styled from '@emotion/styled'
 import { cx, css } from '@emotion/css';
 import { ArrowsClockwise, CaretLeft, CaretRight, DotsThreeOutlineVertical, Eye, FilePlus, MagnifyingGlass, Trash } from 'phosphor-react';
@@ -9,17 +10,18 @@ import { useAuth } from '../services/useContext';
 import Link from 'next/link';
 import { Button, ButtonGroup  } from '@chakra-ui/react';
 import { green } from '@mui/material/colors';
-
+import { useDebounce } from 'usehooks-ts';
 
 
 
 export function ContributorsTable(){
   const  {contributors, getContributors} = useAuth();
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [search, setSearch] = useState("K");
+  const [search, setSearch] = useState("");
   const [accountFilter, setAccountFilter] =  useState("");
   const [pageSize, setPageSize] = useState(10);
   const [pageNumber, setPageNumber] =  useState(0);
+  const debouncedSearchTerm = useDebounce<string>(search, 1000);
 
   function nextPage(){
        setPageNumber(pageNumber+1);
@@ -43,6 +45,16 @@ export function ContributorsTable(){
   
   
 
+
+  function filter(){
+    let filtro;
+    if (debouncedSearchTerm) {
+      filtro = contributors.filter(function(obj: { name: string; }) { return obj.name === search; });
+      return console.log(filtro);
+    } else {
+     return contributors;
+    }
+  }
  
   let pages = paginate(contributors, pageNumber)
  
@@ -50,20 +62,14 @@ export function ContributorsTable(){
 
 
   useEffect(() => {
-    let filtrado ;
-    function filtro(){
-      
-        return filtrado = contributors.filter(function(obj: { name: string; }) { return obj.name == search; });
-   }
     
-    filtro();
-   
+    filter();
     getContributors();
     console.log(pages)    // all pages
     console.log(pages[1]) // second page
-    console.log(filtrado);
+   
     
-  }, []);
+  }, [debouncedSearchTerm]);
 
   
 
@@ -390,8 +396,10 @@ color: #34423D;
       `}>Pesquisar por</span>
     
     <MagnifyingGlass size={18} color="#050505" />
-        <input type="text" placeholder='Pesquise por nome ou cpf' name={search} onChange={(e) => setSearch(e.target.name)}
-        onKeyDown={e => e.key === 'Enter' ? setSearch : ''}
+    <form  onSubmit={filter} >
+        <input type="text" placeholder='Pesquise por nome ou cpf'  
+      value={search}
+      onChange={(event) => setSearch(event.target.value)}
         className={css`font-family: 'Poppins';
         font-style: normal;
         font-weight: 500;
@@ -406,7 +414,7 @@ color: #34423D;
         list-style:none;
 
         color: #587169;`}  />
-
+</form>
 
      </InputSearchDiv >
 
