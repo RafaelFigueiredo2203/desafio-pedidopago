@@ -525,11 +525,11 @@ color: #34423D;
                         ::-webkit-scrollbar-thumb {
                             background: #dad7d7;
                         }
-                          padding-top:1100px;
+                          padding-top:500px;
                           position:relative;
                           overflow-y:auto;
                           overflow-x:none;
-                          margin-top:-40px;
+                          margin-top:-20px;
                           width:355px;
                        
                           display: flex;

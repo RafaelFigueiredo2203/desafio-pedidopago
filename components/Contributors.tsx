@@ -51,7 +51,7 @@ export  function Contributors(){
             }
             @media (max-width: 900px) {
               margin-left:-110px;
-              margin-top:-500px;
+              margin-top:-100px;
             }
             `}>
 
@@ -78,7 +78,7 @@ export  function Contributors(){
             @media (max-width: 1002px) {
               
               width:100%;
-              height: 205vh;
+              height: 240vh;
               margin-left:0px;
             }
             

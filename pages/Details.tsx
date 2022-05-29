@@ -18,7 +18,7 @@ export default function ContributorsDetails(){
       align-items:center;
       @media (max-width: 1600px) {
         width:100%;
-        height:160vh;
+        height:170vh;
         display:flex;
         flex:direction-column;
         align-items:center;
@@ -55,12 +55,13 @@ export default function ContributorsDetails(){
     }
     @media (max-width: 1003px) {
       margin-top:32px;
-     height:130vh;
+     height:150vh;
       
       width:100%;
     }
     @media (max-width: 360px) {
      width:348px;
+     height:150vh;
     }
     
 `
