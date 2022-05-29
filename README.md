@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" >
+GetMech - PWA
+</h1>
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h1 align="center" >
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+  <img  src="https://user-images.githubusercontent.com/60237326/164804926-bd9f9015-34cd-45b5-abde-6250366baab3.png"/>
+   <img src="https://user-images.githubusercontent.com/60237326/164806555-5f5cba82-8a6f-48ee-9e0e-a8457ce6a355.png"/>
+  <img src="https://user-images.githubusercontent.com/60237326/164808343-4d2a5482-1b15-482b-a2ac-036e892b3945.png"/>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+  
+  
+  </h1>
+ **Projeto em Desenvolvimento**
+ Acesse :  -https://getmech-78rjcvl0j-rafaelfigueiredo2203.vercel.app/
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## ✨ Tecnologias
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [React](https://reactjs.org)
+- [SASS](https://sass-lang.com/)
+- [Firebase](https://firebase.google.com/docs)
+
+
+## 💻 Projeto
+
+GetMech é meu Trabalho de Conclusão de Curso da FATEC de Ourinhos/SP.
+Este projeto tem o objetivo de auxiliar motoristas e oficinas mecânicas, motoristas em casos que precisem de serviços mecânicos e oficinas que estão buscando atrair mais clientes, simplificando os atendimentos com a plataforma!
+
+
+## 💻💅🏻 Figma do Projeto
+
+- [Figma GetMech](https://www.figma.com/file/yZXCE42Oiew3FR9KmqF6mk/getMech-Origin?node-id=0%3A1)
+
+## 🚀 Como executar
+
+- Clone o repositório
+- Instale as dependências com `yarn` ou `npm install`
+- Inicie o servidor com `yarn start` ou `npm start`
+
+Agora você pode acessar [`localhost:3000`](http://localhost:3000) do seu navegador.
+
+Never Stop Learning.🚀 🚀 🚀 
+
