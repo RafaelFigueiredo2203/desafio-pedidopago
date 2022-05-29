@@ -1,5 +1,5 @@
 <h1 align="center" >
-GetMech - PWA
+Desafio pedido pago.
 </h1>
 
 
@@ -27,20 +27,16 @@ GetMech - PWA
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [React](https://reactjs.org)
-- [SASS](https://sass-lang.com/)
-- [Firebase](https://firebase.google.com/docs)
+- [NextJs](https://nextjs.org)
+- [Emotion]([https://sass-lang.com/](https://emotion.sh/docs/introduction))
+- [Typescript](https://www.typescriptlang.org/docs/)
 
 
 ## 💻 Projeto
 
-GetMech é meu Trabalho de Conclusão de Curso da FATEC de Ourinhos/SP.
-Este projeto tem o objetivo de auxiliar motoristas e oficinas mecânicas, motoristas em casos que precisem de serviços mecânicos e oficinas que estão buscando atrair mais clientes, simplificando os atendimentos com a plataforma!
+Este projeto é um desafio de um processo seletivo muito massa que gostei demais de desenvolver!Consumimos uma api e mostramos os dados dos colaboradores e dos cargos de  uma organização.
 
 
-## 💻💅🏻 Figma do Projeto
-
-- [Figma GetMech](https://www.figma.com/file/yZXCE42Oiew3FR9KmqF6mk/getMech-Origin?node-id=0%3A1)
 
 ## 🚀 Como executar
 
