@@ -28,7 +28,7 @@ Desafio pedido pago.
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [NextJs](https://nextjs.org)
-- [Emotion](https://emotion.sh/docs/introduction))
+- [Emotion](https://emotion.sh/docs/introduction)
 - [Typescript](https://www.typescriptlang.org/docs/)
 
 
