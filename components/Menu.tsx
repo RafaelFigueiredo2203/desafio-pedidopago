@@ -1,16 +1,14 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Stack, InputGroup, InputLeftElement, Input, StackItem, Popover, PopoverTrigger, Button, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody, PopoverHeader } from '@chakra-ui/react';
-import { cx, css } from '@emotion/css';
+import { css } from '@emotion/css';
 import { DotsThreeVertical, MagnifyingGlass } from 'phosphor-react';
 import styled from '@emotion/styled'
-import { ContributorsTable } from './ContributorsTable';
+import  ContributorsTable  from './ContributorsTable';
 import { useState } from 'react';
-import { PositionsList } from './PositionsList';
+import PositionsList  from './PositionsList';
 
-interface Scre {
-  screen: Screen;
-}
 
-export function Menu(){
+
+export default function Menu(){
 
   const [search, setSearch] = useState('');
   const [yourMenu, setYourMenu] = useState("Colaboradores");

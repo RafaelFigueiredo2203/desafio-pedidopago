@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import { cx, css } from '@emotion/css';
 ;
-import { Header } from './components/Header'
-import { Contributors } from './Contributors';
+import  Header  from '../components/Header';
+import  {Contributors}  from '../components/Contributors';
 import { ChakraProvider } from '@chakra-ui/react';
-import { AuthContextProvider } from './contexts/context';
+import { AuthContextProvider } from '../contexts/context';
 import Link from 'next/link';
 
 

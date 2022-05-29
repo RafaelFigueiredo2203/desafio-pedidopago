@@ -4,9 +4,9 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import { ArrowLeft } from "phosphor-react";
 import { useEffect } from "react";
-import { Header } from "./components/Header";
-import { useAuth } from "./services/useContext";
-import  { PositionsData } from './components/PositionsData';
+import  Header  from "../components/Header";
+import { useAuth } from "../services/useContext";
+import   PositionsData  from '../components/PositionsData';
 
 const Area = styled.div`
       background:#E5E5E5;

@@ -13,13 +13,16 @@ import { green } from '@mui/material/colors';
 import { useDebounce } from 'usehooks-ts';
 
 
+interface Data {
+  pageSize:number;
+}
 
-export function ContributorsTable(){
+export default function ContributorsTable(){
   const  {contributors, getContributors} = useAuth();
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [search, setSearch] = useState("");
   const [accountFilter, setAccountFilter] =  useState("");
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState<Data | any>(10);
   const [pageNumber, setPageNumber] =  useState(0);
   const debouncedSearchTerm = useDebounce<string>(search, 1000);
 
@@ -34,7 +37,7 @@ export function ContributorsTable(){
 }
 
   function paginate (contributors: any[], pageNumber: number) {
-    return contributors.reduce((acc, val, i) => {
+    return contributors?.reduce((acc, val, i) => {
       let idx = Math.floor(i / pageSize)
       let page = acc[idx] || (acc[idx] = [])
       page.push(val)
@@ -854,7 +857,7 @@ color: #34423D;
      
           <Span className={css`padding:0;`}>Mostrando {pageSize} de 50 registros</Span>
               <Select  value={pageSize} onChange={(e) => setPageSize(e.currentTarget.value)}>
-                <option value="10">10</option>
+                <option  value="10">10</option>
                 <option value="20">20</option>
                 <option value="40">40</option>
                 <option value="50">50</option>

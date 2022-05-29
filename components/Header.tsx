@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import Link from 'next/link';
 
-export function Header(){
+export default function Header(){
   return(
     <>
     <div className={css`

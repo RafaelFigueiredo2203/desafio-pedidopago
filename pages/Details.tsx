@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { css } from "@emotion/react";
-import { Header } from "./components/Header";
+import Header  from "../components/Header";
 import { ArrowLeft } from 'phosphor-react';
 import { Button, ButtonGroup  } from '@chakra-ui/react';
 import Link from 'next/link';
-import { DetailsContributor } from './components/DetailsContributor';
+import  DetailsContributor  from '../components/DetailsContributor';
 
 export default function ContributorsDetails(){
 

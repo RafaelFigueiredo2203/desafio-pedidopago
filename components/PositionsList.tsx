@@ -14,7 +14,7 @@ interface Props{
     isExpanded: any;
 }
   
-export const PositionsList = () => {
+export default function PositionsList() {
   
   
   

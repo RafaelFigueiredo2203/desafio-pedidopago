@@ -27,7 +27,7 @@ type AuthContextProviderProps ={
 }
 
 
-export function PositionsData(){
+export default function PositionsData(){
   const [positionsDetails, setPositionsDetails] = useState<DetailsProps[]>([]);
   const [ group, setGroup] = useState<DetailsProps[]>([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
