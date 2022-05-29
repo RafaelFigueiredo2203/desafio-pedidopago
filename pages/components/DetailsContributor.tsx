@@ -61,6 +61,7 @@ border-radius: 8px;
 flex: none;
 order: 0;
 flex-grow: 1;
+
 `
 
  const P = styled.p`
@@ -80,7 +81,7 @@ flex-grow: 1;
  `
  const OrganizationData =  styled.div`
  box-sizing: border-box;
-  position:absolute;
+ 
   bottom:0;
  display: flex;
  flex-direction: column;
@@ -92,13 +93,25 @@ flex-grow: 1;
  width: 908px;
  height: 235px;
  
-
+margin-top:40px;
  border: 2px solid #EAEFED;
  border-radius: 8px;
 
  flex: none;
  order: 2;
  flex-grow: 0;
+ @media (max-width: 1003px) {
+  flex-direction: column;
+  width:500px;
+  height: 435px;
+
+}
+@media (max-width: 563px) {
+  width: 316px;
+
+  height: 435px;
+
+}
  `
  const Div = styled.div`
  padding-right:10px;
@@ -120,6 +133,17 @@ flex-grow: 1;
 
  border: 2px solid #CAD6D1;
  border-radius: 8px;
+ @media (max-width: 1003px) {
+ 
+  margin-bottom:24px;
+  
+}
+@media (max-width: 563px) {
+  width: 268px;
+
+
+
+}
   `
 
   const Grid =  styled.div`
@@ -131,6 +155,16 @@ flex-grow: 1;
   grid-row-gap: 20px;
   width:860px;
   height: 136px;
+  @media (max-width: 1003px) {
+    display:block;
+    padding-top:24px;
+    width:500px;
+    
+  }
+  @media (max-width: 563px) {
+    width: 250px;
+  
+  }
   `
 
   interface TypeContributor{
@@ -200,8 +234,16 @@ export function DetailsContributor(){
               <Span className={css`margin-bottom:24px;`}>Informações pessoais</Span>
 
 
-              <div className={css` display:flex; flex-direction: row; width:100%; height:70px`}>
-                <PersonalInformation className={css`margin-left:0px;`}>
+              <div className={css` display:flex; flex-direction: row; width:100%; height:70px;
+               @media (max-width: 1003px) {
+                        flex-direction:column;
+                        height: 230px;
+                        align-items:center;
+                        justify-content:space-between;
+                      }`}>
+                <PersonalInformation className={css`margin-left:0px; @media (max-width: 1003px) {
+                                      margin-left:24px; margin-bottom:8px;
+                                    }`}>
                 <div className={css`display: flex;
                                     flex-direction: row;
                                     align-items: center;
@@ -210,7 +252,7 @@ export function DetailsContributor(){
 
                                     width: 171px;
                                     height: 38px;
-
+                                   
 
                                     ;`}>
                                     
@@ -235,7 +277,9 @@ export function DetailsContributor(){
 
                                     width: 171px;
                                     height: 38px;
-
+                                    @media (max-width: 1003px) {
+                                      margin-bottom:8px;
+                                    }
 
                                     ;`}>
                                     
@@ -253,7 +297,9 @@ export function DetailsContributor(){
                            </div> 
 
                 </PersonalInformation>
-                <PersonalInformation>
+                <PersonalInformation className={css` @media (max-width: 1003px) {
+                                      margin-top:8px;
+                                    }`}>
                 <div className={css`display: flex;
                                     flex-direction: row;
                                     align-items: center;
@@ -262,7 +308,7 @@ export function DetailsContributor(){
 
                                     width: 171px;
                                     height: 38px;
-
+                                   
 
                                     ;`}>
                                     

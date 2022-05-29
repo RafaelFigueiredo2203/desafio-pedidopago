@@ -16,6 +16,18 @@ export default function ContributorsDetails(){
       display: flex;
       flex-direction: column;
       align-items:center;
+      @media (max-width: 1600px) {
+        width:100%;
+        height:160vh;
+        display:flex;
+        flex:direction-column;
+        align-items:center;
+        
+        text-align:center;
+      }
+      
+      
+      
   `
 
   const DetailsArea = styled.div`
@@ -37,7 +49,19 @@ export default function ContributorsDetails(){
     box-shadow: 0px 4px 8px rgba(165, 171, 179, 0.16);
     border-radius: 8px;
 
-
+    @media (max-width: 1600px) {
+      margin-top:32px;
+      margin-left:0px;
+    }
+    @media (max-width: 1003px) {
+      margin-top:32px;
+     height:130vh;
+      
+      width:100%;
+    }
+    @media (max-width: 360px) {
+     width:348px;
+    }
     
 `
  const SpanTitle = styled.span`
@@ -51,7 +75,10 @@ export default function ContributorsDetails(){
     display: flex;
     align-items: center;
     color: #34423D;
-    
+    @media (max-width: 1003px) {
+      font-size: 20px;
+      
+    }
 
  `
  const Buttonn = styled.button`
@@ -86,8 +113,14 @@ export default function ContributorsDetails(){
     flex-direction:row;
     align-items:left;
     margin-top:55px;
-      margin-left:-215px;
-
+     margin-left:-215px;
+     @media (max-width: 1600px) {
+      margin-left:-490px;
+    }
+    @media (max-width: 1003px) {
+      margin-left:-40px;
+      
+    }
  `
  const PerfilBox =  styled.div`
         display: flex;

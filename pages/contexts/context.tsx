@@ -58,8 +58,8 @@ export function AuthContextProvider(props: AuthContextProviderProps){
  async function getContributors(){
     await api.get("/agents")
     .then((response) => {
-      console.log(response);
-      setContributors(response.data)
+      console.log(response.data.items);
+      setContributors(response.data.items);
    })
    .catch((err) => {
      console.error("ops! ocorreu um erro : " + err);

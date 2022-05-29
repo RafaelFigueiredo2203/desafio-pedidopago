@@ -1,20 +1,26 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Stack, InputGroup, InputLeftElement, Input, StackItem } from '@chakra-ui/react';
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Stack, InputGroup, InputLeftElement, Input, StackItem, Popover, PopoverTrigger, Button, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody, PopoverHeader } from '@chakra-ui/react';
 import { cx, css } from '@emotion/css';
-import { MagnifyingGlass } from 'phosphor-react';
+import { DotsThreeVertical, MagnifyingGlass } from 'phosphor-react';
 import styled from '@emotion/styled'
 import { ContributorsTable } from './ContributorsTable';
 import { useState } from 'react';
 import { PositionsList } from './PositionsList';
 
+interface Scre {
+  screen: Screen;
+}
 
 export function Menu(){
 
-  const [search, setSearch]: [string, (search: string) => void] = useState("");
+  const [search, setSearch] = useState('');
+  const [yourMenu, setYourMenu] = useState("Colaboradores");
 
-  const handleChange = (e: { target: { value: string; }; }) => {
-    setSearch(e.target.value);
-  };
-
+  function setCol(){
+    return setYourMenu("Colaboradores");
+  }
+  function setCarg(){
+    return setYourMenu("Cargos");
+  }
 
   const InputSearchDiv = styled.div`
   display: flex;
@@ -53,17 +59,62 @@ padding-top:40px;
 
 color: #34423D;
 `
+const DivMenu = styled.div`box-sizing: border-box;
+
+          /* Auto layout */
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          text-align:center;
+          padding: 20px;
+          margin-bottom:40px;
+          margin-top:40px;
+          width: 316px;
+          height: 56px;
+
+
+          background: #FFFFFF;
+
+          border: 2px solid #CAD6D1;
+          border-radius: 8px;
+
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+`
 
   return(
-    <div>
-      <Tabs isLazy className={css``} colorScheme='green' >
+
+
+    <div >
+
+
+      <Tabs isLazy className={css`   @media (max-width: 495px) {width: 300px;} @media (max-width: 1002px) { width: 500px; display:none;}`} colorScheme='green' >
   <TabList className={css`padding: 0px;
-           margin-top:50px; 
+          margin-top:50px; 
           width: 902px;
           height: 30px;
           flex: none;
           order: 0;
-          flex-grow: 0;`} >
+          flex-grow: 0;
+          @media (max-width: 495px) {width: 350px;}
+          @media (max-width: 1002px) {
+            width:500px;
+            height:56px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:14.5px;
+            
+            
+            }
+           
+            
+          `} >
+            
     <Tab className={css`display: flex;
             flex-direction: column;
             justify-content: center;
@@ -74,7 +125,9 @@ color: #34423D;
             height: 30px;
             flex: none;
             order: 0;
-            flex-grow: 0;`}> 
+            flex-grow: 0;
+            @media (max-width: 495px) {width: 350px;}
+            `}> 
             
             <span className={css`
                   font-family: 'Poppins';
@@ -119,7 +172,7 @@ color: #34423D;
                   text-align: center;
                   
                   /* Neutral Colors/Black */
-                  
+                  @media (max-width: 495px) {width: 350px;}
                   color: #34423D;
             `} >Cargos</span>
             
@@ -127,105 +180,183 @@ color: #34423D;
   </TabList>
   <TabPanels>
     {/* initially mounted */}
-    <TabPanel className={css`display:flex; flex-direction:column;`}>
-    <InputSearchDiv > 
-      <span className={css`
-            background-color:#FFF;
-            text-align: left !important;
-            position:absolute;
-            margin-bottom:68px;
+    <TabPanel className={css`display:flex; flex-direction:column;
+            @media (max-width: 1002px) {
+            width:100%;
+            height:56px;
+            display:flex;
+            align-items:center;
+            padding:14.5px;
+           background:#000;
+            }
+            @media (max-width: 495px) {width: 350px;}
             
-            width: 100px;
-            border-bottom: none;
-
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            
-            padding-left:2px;
-            padding-right:2px;
-
-            display: flex;
-            align-items: center;
-
-           
-
-            color: #A3B8B0;
-      `}>Pesquisar por</span>
+            `}>
     
-    <MagnifyingGlass size={18} color="#050505" />
-        <input className={css`font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        margin-left:12px;
-        width:100%;
-      
-      
-        list-style:none;
-
-        color: #587169;`} type="text" placeholder='Pesquise por nome ou cpf' name="search" value={search} onChange={(e) => setSearch(e.target.value)} />
-
-
-     </InputSearchDiv >
-
-
-     <Span>Listagem de colaboradores</Span>
 
         <ContributorsTable />
 
     </TabPanel>
     {/* initially not mounted */}
     <TabPanel>
-    <InputSearchDiv > 
-      <span className={css`
-            background-color:#FFF;
-            text-align: left !important;
-            position:absolute;
-            margin-bottom:68px;
-            
-            width: 100px;
-            border-bottom: none;
-
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            
-            padding-left:2px;
-            padding-right:2px;
-
-            display: flex;
-            align-items: center;
-
-           
-
-            color: #A3B8B0;
-      `}>Pesquisar por</span>
-
-<MagnifyingGlass size={18} color="#050505" />
-        <input className={css`font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        margin-left:12px;
-        width:100%;
-      
-      
-        list-style:none;
-
-        color: #587169;`} type="text" placeholder='Pesquise por cargos' name="search" value={search} onChange={(e) => setSearch(e.target.value)} />
-
-
-     </InputSearchDiv >
-     <Span >Listagem de cargos</Span>
+   
       <PositionsList/>
     </TabPanel>
   </TabPanels>
 </Tabs>
+
+
+<Tabs  className={css`@media (max-width: 490px) {  width:350px} @media (min-width: 1002px) {  display:none;} width: 500px; display:flex; flex-direction:column-reverse; align-items:center; justify-content:left; text-align:center;  `}   colorScheme='green' >
+
+ <DivMenu>
+   <Span className={css` margin-top:-40px; text-align:center; font-weight: 500; font-size: 16px; color: #587169;`}>{yourMenu}</Span>
+<Popover  >
+
+  <PopoverTrigger>
+    <Button className={css`background:#FFF; border-radius:40px;`}><DotsThreeVertical size={24} color="#050505" weight="bold" /></Button>
+  </PopoverTrigger>
+  <PopoverContent className={css`height:241px; @media (max-width: 490px) {  margin-right:10px;}`}>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    
+    <PopoverHeader className={css`display: flex;
+                                  flex-direction: row;
+                                  justify-content: space-between;
+                                  align-items: center;
+                                  padding: 16px 24px 0px;
+                                  text-align:center;
+                                  gap: 8px;
+                                  border:none
+                                  width: 318px;
+                                  height: 43px;
+
+                                  flex: none;
+                                  order: 0;
+                                  align-self: stretch;
+                                  flex-grow: 0;`}> <Span className={css`margin-top:-40px;`}>Categorias</Span></PopoverHeader>
+    <PopoverBody className={css`display: flex;
+                              
+                              flex-direction: column;
+                              align-items: center;
+                              padding: 16px 0px 40px;
+                              gap: 10px;
+
+                              
+                              width: 318px;
+                              height: 241px;
+
+                              background: #FFFFFF;
+
+                              box-shadow: 0px 8px 24px rgba(165, 171, 179, 0.4);
+                              `}>
+      
+  <TabList >
+           <div className={css`display: flex;
+                      flex-direction: row;
+                      align-items: center;
+                      justify-content:left;
+                      padding: 16px 24px;
+                      gap: 16px;
+
+                      width: 312px;
+                      height: 58px;
+
+                      flex: none;
+                      order: 0;
+                      align-self: stretch;
+                      flex-grow: 1;
+                                  `}>
+    <Tab onClick={setCol} id="Colaboradores" className={css` justify-content:left; width: 310px; height: 58px;`} > 
+            
+            <span className={css`
+                  font-family: 'Poppins';
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 14px;
+                  line-height: 100%;
+                  /* identical to box height, or 14px */
+                  margin-bottom:16px;
+                  display: flex;
+                  align-items: center;
+                  text-align: center;
+                  
+                  /* Neutral Colors/Black */
+                  
+                  color: #34423D;
+            `}>Colaboradores</span>
+            
+            </Tab>
+            </div>
+            <div className={css`position:absolute; ; margin-top:60px; margin-left:0px;display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  padding: 16px 24px;
+                  gap: 16px;
+
+                  width: 312px;
+                  height: 58px;
+
+
+                  /* Inside auto layout */
+
+                  flex: none;
+                  order: 0;
+                  align-self: stretch;
+                  flex-grow: 1;`}>
+    <Tab onClick={setCarg}  className={css` justify-content:left; width: 310px; height: 58px;`} >  
+            
+            <span className={css`
+                  font-family: 'Poppins';
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 14px;
+                  line-height: 100%;
+                  /* identical to box height, or 14px */
+                  margin-bottom:16px;
+                  display: flex;
+                  align-items: center;
+                  text-align: center;
+                  
+                  /* Neutral Colors/Black */
+                  
+                  color: #34423D;
+            `} >Cargos</span>
+            
+            </Tab>
+            </div>
+  </TabList>
+
+  </PopoverBody>
+  </PopoverContent>
+</Popover>
+</DivMenu>
+
+  <TabPanels>
+    {/* initially mounted */}
+    <TabPanel className={css`display:flex; flex-direction:column;
+            @media (max-width: 1002px) {
+            width:100%;
+            height:56px;
+            display:flex;
+            align-items:center;
+            padding:14.5px;
+           
+            }
+            
+            `}>
+    
+
+        <ContributorsTable />
+
+    </TabPanel>
+    {/* initially not mounted */}
+    <TabPanel>
+   
+      <PositionsList/>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
+
     </div>
   )
 }

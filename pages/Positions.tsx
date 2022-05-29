@@ -16,6 +16,15 @@ const Area = styled.div`
       display: flex;
       flex-direction: column;
       align-items:center;
+      @media (max-width: 1600px) {
+        width:100%;
+        height:160vh;
+        display:flex;
+        flex:direction-column;
+        align-items:center;
+        height:180vh;
+        text-align:center;
+      }
   `
   const DetailsArea = styled.div`
   display: flex;
@@ -24,7 +33,7 @@ const Area = styled.div`
   padding: 40px 24px;
   gap: 40px;
   margin-top:32px;
- margin-left:290px;
+
  width: 956px;
 height: 889px;
 
@@ -36,7 +45,13 @@ height: 889px;
   box-shadow: 0px 4px 8px rgba(165, 171, 179, 0.16);
   border-radius: 8px;
 
-
+  @media (max-width: 1600px) {
+    margin-left:0px;
+  }
+  @media (max-width: 1002px) {
+   width:100%;
+   height:150vh;
+  }
   
 `
 const SpanTitle = styled.span`
@@ -78,6 +93,7 @@ const Buttonn = styled.button`
     flex: none;
     order: 0;
     flex-grow: 0;
+    
 `
 
 
@@ -87,7 +103,13 @@ const Box = styled.div`
   align-items:left;
   margin-top:55px;
     margin-left:-215px;
+    @media (max-width: 1600px) {
+      margin-left:-550px;
 
+    }
+    @media (max-width: 1002px) {
+      margin-right:-500px;
+      }
 `
 
   
@@ -101,7 +123,14 @@ export default function Positions(){
       <Header/>
 
       <Box>
-          <Buttonn > <Link href='/'><ArrowLeft size={24} color="#050505" weight="bold" /></Link></Buttonn><SpanTitle>  Detalhes do colaborador</SpanTitle>
+          <Buttonn > <Link href='/'><ArrowLeft size={24} color="#050505" weight="bold" /></Link></Buttonn>
+          
+          <SpanTitle className={css` @media (max-width: 1002px) {
+                                      display:none;
+                                      }`}> Cargos e permissões</SpanTitle>
+                                       <SpanTitle className={css` @media (min-width: 1002px) {
+                                      display:none;
+                                      }`}> Novo Cargo</SpanTitle>
           </Box>
           <DetailsArea>
 

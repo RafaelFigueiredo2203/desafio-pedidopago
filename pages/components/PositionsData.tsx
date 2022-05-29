@@ -1,6 +1,7 @@
 import { Checkbox, Stack, useDisclosure } from "@chakra-ui/react"
 import { css } from "@emotion/css"
 import styled from "@emotion/styled"
+import { MagnifyingGlass } from "phosphor-react"
 import { ReactNode, useEffect, useState } from "react"
 import api from "../services/api"
 import { useAuth } from "../services/useContext"
@@ -26,7 +27,7 @@ type AuthContextProviderProps ={
 }
 
 
-export function PositionsData(props:AuthContextProviderProps){
+export function PositionsData(){
   const [positionsDetails, setPositionsDetails] = useState<DetailsProps[]>([]);
   const [ group, setGroup] = useState<DetailsProps[]>([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -72,9 +73,13 @@ background: #FFFFFF;
 
 
 border: 2px solid #CAD6D1;
-border-radius: 8px;`
+border-radius: 8px;
+@media (max-width: 1002px) {
+  width:350px;
+ }
+`
 
-const Span = styled.span `
+const Spann = styled.span `
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
@@ -107,6 +112,9 @@ const HeaderTable= styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
+  @media (max-width: 1002px) {
+    width: 316px;
+  }
   `
 
 const SpanHeaderTable = styled.span`
@@ -139,6 +147,12 @@ const PositionsData = styled.div`
   height: 69px;
 
   border-bottom:1px solid #EAEFED;
+  @media (max-width: 1002px) {
+    width:500px;
+   }
+   @media (max-width: 500px) {
+    width:340px;
+   }
   `
   
   const P = styled.p`
@@ -166,16 +180,24 @@ flex-grow: 0;
 
 
   `
-
+ 
   
   return(
    
-    <div>
+    <div  className={css` @media (max-width: 1002px) {
+      flex-direction:column;width:350px;
+    } `}>
+      
 
 {myarray?.map((items: any) => (
-        <div key={items.role} className={css`display :flex; flex-direction:row; `}>
+        <div key={items.role} className={css`display :flex; flex-direction:row;   @media (max-width: 1002px) {
+          flex-direction:column;width:340px;
+        } `}>
           
-    <Div className={css`font-family:'Poppins';color: #587169; font-size: 16px; font-weight: 500; outline: 0; margin-right:24px; margin-left:24px; width: 442px; height: 56px;`}>{items.department}</Div>
+    <Div className={css` @media (max-width: 1002px) {
+                          width:316px;
+                          height:56px;
+                        }font-family:'Poppins';color: #587169; font-size: 16px; font-weight: 500; outline: 0; margin-right:24px; margin-left:24px; width: 442px; height: 56px;`}>{items.department}</Div>
     <span className={css`position:absolute; 
                                                          background-color:#FFF;
                                                           font-family: 'Poppins';
@@ -209,26 +231,44 @@ flex-grow: 0;
                                                           display:flex;
                                                           align-items:center;
                                                           justify-content:center;
-                                                          `}>cargo</span>
-    <Div className={css`font-family:'Poppins';color: #587169; font-size: 16px; font-weight: 500; width: 442px; height: 56px; outline:0;`}> {items.name}</Div>
+                                                          @media (max-width: 1002px) {
+                                                            margin-left:39px;
+                                                          margin-top:70px;
+                                                           }
+                                                          `}>Cargo</span>
+    <Div className={css`@media (max-width: 1002px) {
+                        width:316px;
+                        height:56px;
+                        margin-top:24px;
+                        margin-left:24px;
+                      }font-family:'Poppins';color: #587169; font-size: 16px; font-weight: 500; width: 442px; height: 56px; outline:0;`}> {items.name}</Div>
 
 
   </div> ))}
   
-  <Span className={css`margin-bottom:40px;`}>Listagem de colaboradores</Span>
-  <HeaderTable>
+  <Spann className={css`margin-bottom:40px;@media (max-width: 1002px) {
+  width:312px;
+ }`}>Listagem de cargos</Spann>
+  <HeaderTable >
       <SpanHeaderTable>Cargo</SpanHeaderTable>
-      <SpanHeaderTable className={css`margin-left:368px;`}>Ler</SpanHeaderTable>
-      <SpanHeaderTable>Editar</SpanHeaderTable>
-      <SpanHeaderTable className={css`margin-right:50px;`}>Excluir</SpanHeaderTable>
+      <SpanHeaderTable className={css`margin-left:368px; @media (max-width: 1002px) {
+    margin-left:-65px; margin-right:-95px;
+  }`}>Ler</SpanHeaderTable>
+      <SpanHeaderTable className={css`@media (max-width: 1002px) {
+    margin-right:-111px;
+  }`}>Editar</SpanHeaderTable>
+      <SpanHeaderTable className={css`margin-right:50px;@media (max-width: 1002px) {
+    margin-right:0px;
+  }`}>Excluir</SpanHeaderTable>
     </HeaderTable>
     
     {group?.map((items: any,index:number) => (
     <PositionsData key={items?.grouprules}>
       <P>{items.role}</P>
 
-      
-      <Stack className={css`margin-left:318px;`} spacing={113} direction='row'>
+      <Stack className={css`margin-left:-80px; @media (min-width: 1002px) {
+   display:none; 
+  }`} spacing={43} direction='row'>
         <Checkbox isDisabled={true} style={{background: items?.permissions.includes("read") ? "#1DD195" : "#FFF" }}  iconSize={10} iconColor="#FFF" defaultChecked size="md" className={css`width:20px; height:20px; box-sizing: border-box; background: #1DD195; border: 2px solid #CAD6D1; border-radius: 6px; display:flex; align-items:center; justify-content:center;`}>
 
         </Checkbox>
@@ -239,8 +279,23 @@ flex-grow: 0;
 
         </Checkbox>
       </Stack>
+      
+      <Stack className={css`margin-left:318px;@media (max-width: 1002px) {
+   display:none;
+  }`} spacing={113} direction='row'>
+        <Checkbox isDisabled={true} style={{background: items?.permissions.includes("read") ? "#1DD195" : "#FFF" }}  iconSize={10} iconColor="#FFF" defaultChecked size="md" className={css`width:20px; height:20px; box-sizing: border-box; background: #1DD195; border: 2px solid #CAD6D1; border-radius: 6px; display:flex; align-items:center; justify-content:center;`}>
 
+        </Checkbox>
+        <Checkbox isDisabled={true} style={{background: items.permissions.includes("write")  ? "#1DD195" : "#FFF" }}iconSize={10} iconColor="#FFF" defaultChecked size="md" className={css`width:20px; height:20px; box-sizing: border-box; background: #1DD195; border: 2px solid #CAD6D1; border-radius: 6px; display:flex; align-items:center; justify-content:center;`}>
+
+        </Checkbox>
+        <Checkbox isDisabled={true} style={{background: items?.permissions.includes("delete") ? "#1DD195" : "#FFF" }} iconSize={10} iconColor="#FFF" defaultChecked size="md" className={css`width:20px; height:20px; box-sizing: border-box; background: #1DD195; border: 2px solid #CAD6D1; border-radius: 6px; display:flex; align-items:center; justify-content:center;`}>
+
+        </Checkbox>
+      </Stack>
     
+
+     
     </PositionsData>
  ))}
     </div>
