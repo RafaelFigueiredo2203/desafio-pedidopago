@@ -10,7 +10,7 @@ Desafio pedido pago.
 
 
 
-  <img  src="[https://user-images.githubusercontent.com/60237326/164804926-bd9f9015-34cd-45b5-abde-6250366baab3.png](https://user-images.githubusercontent.com/60237326/170887612-273b5fee-a887-4911-8718-0ed4051f307f.png)"/>
+  <img  src="https://user-images.githubusercontent.com/60237326/164804926-bd9f9015-34cd-45b5-abde-6250366baab3.png](https://user-images.githubusercontent.com/60237326/170887612-273b5fee-a887-4911-8718-0ed4051f307f.png)">
   
 
 
@@ -18,7 +18,7 @@ Desafio pedido pago.
   
   </h1>
  **Projeto em Desenvolvimento**
- Acesse :  -[Desafio Pedido Pago](https://desafio-pedidopago-k94luqadn-rafaelfigueiredo2203.vercel.app/)
+ Acesse : https://desafio-pedidopago-k94luqadn-rafaelfigueiredo2203.vercel.app/
 
 
 
